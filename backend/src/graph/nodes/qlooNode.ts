@@ -1,13 +1,12 @@
 import axios from "axios";
+import dotenv from "dotenv";
+dotenv.config();
 
 export async function fetchQlooInsights(state: any) {
-  const preferences = state.userPreferences;
+  // Replace with actual mapping logic if needed
+  const interestEntityId = "FCE8B172-4795-43E4-B222-3B550DC05FD9";
 
-  // You'll need to convert your preferences into Qloo's UUIDs
-  // For now, assume you're using a sample UUID as in their example
-  const interestEntityId = "FCE8B172-4795-43E4-B222-3B550DC05FD9"; // You need to map this from preferences
-
-  const url = `https://api.qloo.com/v2/insights/?filter.type=urn:entity:place&signal.interests.entities=${interestEntityId}&filter.location.query=New%20York`;
+  const url = `https://hackathon.api.qloo.com/v2/insights?filter.type=urn:entity:place&signal.interests.entities=${interestEntityId}&filter.location.query=New%20York`;
 
   try {
     const { data } = await axios.get(url, {
