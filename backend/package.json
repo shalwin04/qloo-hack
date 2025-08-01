@@ -14,8 +14,10 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@types/cors": "^2.8.19",
     "@types/express": "^5.0.3",
     "@types/node": "^24.1.0",
+    "@types/ws": "^8.18.1",
     "nodemon": "^3.1.10",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
@@ -23,8 +25,12 @@
   "dependencies": {
     "@langchain/community": "^0.3.49",
     "@langchain/core": "^0.3.66",
+    "@langchain/google-genai": "^0.2.16",
     "@langchain/langgraph": "^0.4.0",
     "@langchain/openai": "^0.6.3",
-    "express": "^5.1.0"
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "node-fetch": "^3.3.2"
   }
 }

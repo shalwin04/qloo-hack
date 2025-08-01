@@ -1,0 +1,54 @@
+.spotify-connect-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #121212;
+  color: white;
+}
+
+.spotify-connect-content {
+  text-align: center;
+  padding: 2rem;
+}
+
+.spotify-connect-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #1DB954;
+}
+
+.spotify-connect-content p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: #B3B3B3;
+}
+
+.spotify-connect-button {
+  background-color: #1DB954;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.spotify-connect-button:hover {
+  background-color: #1ED760;
+  transform: translateY(-2px);
+}
+
+.spotify-connect-button:disabled {
+  background-color: #888888;
+  cursor: not-allowed;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
