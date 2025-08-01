@@ -8,6 +8,7 @@ yarn-error.log*
 dist/
 build/
 
+node_modules/
 # Environment variables
 .env
 .env.local

@@ -1,7 +1,8 @@
-import express from 'express';
-import cors from 'cors';
-import dotenv from 'dotenv';
-import spotifyRouter from './routes/spotify';
+import express from "express";
+import dotenv from "dotenv";
+import cors from "cors";
+import routes from "./routes/index"; // If this contains /init or other routes
+import spotifyRouter from "./routes/spotify";
 
 dotenv.config();
 
@@ -13,15 +14,18 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Routes
-app.use('/api/spotify', spotifyRouter);
+// Mount your main routes (e.g. /init)
+app.use("/", routes);
+
+// Spotify API routes
+app.use("/api/spotify", spotifyRouter);
 
 // Health check
-app.get('/health', (req, res) => {
-  res.json({ status: 'OK', timestamp: new Date().toISOString() });
+app.get("/health", (req, res) => {
+  res.json({ status: "OK", timestamp: new Date().toISOString() });
 });
 
 // Start server
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+  console.log(`✅ Server running at http://localhost:${PORT}`);
 });
