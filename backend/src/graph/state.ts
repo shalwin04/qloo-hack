@@ -20,4 +20,22 @@ export const graphStateDef = {
     reducer: (x, y) => y ?? x,
     default: () => ({}),
   }),
+
+  chatHistory: Annotation<
+    { role: "user" | "ai"; content: string }[]
+  >({
+    reducer: (x, y) => [...(x ?? []), ...(y ?? [])],
+    default: () => [],
+  }),
+
+  sessionMeta: Annotation<{
+    sessionId: string;
+    timestamp: string;
+  }>({
+    reducer: (x, y) => y ?? x,
+    default: () => ({
+      sessionId: "",
+      timestamp: new Date().toISOString(),
+    }),
+  }),
 };
